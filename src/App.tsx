@@ -5,7 +5,7 @@ import SaldoCard from './components/SaldoCard'
 import GraficoBarras from './components/GraficoBarras'
 import LancamentoItem from './components/LancamentoItem'
 import type { TipoLancamento } from './types'
-import { gerarId } from './utils/formatters'
+import { } from './utils/formatters'
 
 function NovoLancamento({ onClose }: { onClose: () => void }) {
   const { adicionarLancamento } = useLancamentos()
