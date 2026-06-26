@@ -15,3 +15,11 @@ export interface DadosMes {
   receitas: number
   despesas: number
 }
+
+export interface Perfil {
+  nome: string
+  email: string
+  cnpj: string
+  ramo: string
+  cidade: string
+}
