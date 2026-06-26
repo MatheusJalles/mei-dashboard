@@ -1,6 +1,9 @@
 # MEI Dashboard
 
-Dashboard financeiro para microempreendedores: controle de receitas, despesas, cálculo automático de ISS e acompanhamento do limite anual MEI.
+Dashboard financeiro para MEI com React.js, TypeScript e Tailwind CSS. 
+Funcionalidades: controle de receitas e despesas, cálculo automático de ISS, 
+gráfico mensal, limite anual MEI, perfil do empreendedor, persistência com 
+localStorage e exportação de relatório em PDF.
 
 🔗 **[Acesse o projeto ao vivo](https://mei-dashboard-three.vercel.app/)**
 
@@ -15,12 +18,16 @@ Dashboard financeiro para microempreendedores: controle de receitas, despesas, c
 
 ## Funcionalidades
 
+## Funcionalidades
+
 - Registro de receitas e despesas
 - Cálculo automático de ISS (5%)
 - Gráfico de receitas vs despesas por mês
 - Acompanhamento do limite anual MEI (R$ 81.000)
+- Perfil do microempreendedor com CNPJ e ramo
+- Persistência de dados com localStorage
+- Exportação de relatório financeiro em PDF
 - Interface responsiva dark mode
-
 ## Como rodar localmente
 
 ```bash
