@@ -23,3 +23,18 @@ export interface Perfil {
   ramo: string
   cidade: string
 }
+
+export interface LinkMEI {
+  titulo: string
+  descricao: string
+  url: string
+  icone: string
+}
+
+export interface ObrigacaoMEI {
+  titulo: string
+  descricao: string
+  vencimento: string
+  tipo: 'mensal' | 'anual'
+  urgente: boolean
+}

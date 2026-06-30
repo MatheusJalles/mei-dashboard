@@ -1,32 +1,42 @@
-# React + TypeScript + Vite
+# MEI Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Dashboard financeiro para MEI com React.js, TypeScript e Tailwind CSS. 
+Funcionalidades: controle de receitas e despesas, cálculo automático de ISS, 
+gráfico mensal, limite anual MEI, perfil do empreendedor, persistência com 
+localStorage e exportação de relatório em PDF.
 
-Currently, two official plugins are available:
+🔗 **[Acesse o projeto ao vivo](https://mei-dashboard-three.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js + TypeScript
+- Tailwind CSS
+- Vite
+- Vercel (deploy)
 
-## Expanding the Oxlint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Funcionalidades
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Registro de receitas e despesas
+- Cálculo automático de ISS (5%)
+- Gráfico de receitas vs despesas por mês
+- Acompanhamento do limite anual MEI (R$ 81.000)
+- Perfil do microempreendedor com CNPJ e ramo
+- Persistência de dados com localStorage
+- Exportação de relatório financeiro em PDF
+- Interface responsiva dark mode
+## Como rodar localmente
+
+```bash
+git clone https://github.com/MatheusJalles/mei-dashboard
+cd mei-dashboard
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+Desenvolvido por [Matheus Jalles](https://www.linkedin.com/in/matheus-jalles)
