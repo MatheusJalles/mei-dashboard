@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Search} from 'lucide-react'
+import { Search } from 'lucide-react'
 import { useLancamentos } from '../context/LancamentosContext'
 import LancamentoItem from './LancamentoItem'
 import type { TipoLancamento } from '../types'
@@ -17,15 +17,16 @@ export default function Lancamentos() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center gap-3">
-        <div className="flex-1 relative">
-          <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
+      <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex-1 relative min-w-48">
+          <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
           <input
             type="text"
             placeholder="Buscar lançamento..."
             value={busca}
             onChange={e => setBusca(e.target.value)}
-            className="w-full bg-gray-900 border border-gray-700 rounded-xl pl-9 pr-4 py-2.5 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-emerald-400"
+            className="w-full border rounded-xl pl-9 pr-4 py-2.5 text-sm text-primary placeholder-muted focus:outline-none focus:border-emerald-400 transition-colors"
+            style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border)' }}
           />
         </div>
         <div className="flex gap-2">
@@ -33,12 +34,14 @@ export default function Lancamentos() {
             <button
               key={tipo}
               onClick={() => setFiltroTipo(tipo)}
-              className={`px-3 py-2 rounded-xl text-xs font-medium transition-all capitalize
-                ${filtroTipo === tipo
-                  ? tipo === 'receita' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                  : tipo === 'despesa' ? 'bg-red-500/20 text-red-400 border border-red-500/30'
-                  : 'bg-gray-700 text-white border border-gray-600'
-                  : 'bg-gray-900 text-gray-400 border border-gray-700 hover:bg-gray-800'}`}
+              className="px-3 py-2 rounded-xl text-xs font-medium transition-all"
+              style={filtroTipo === tipo
+                ? tipo === 'receita'
+                  ? { backgroundColor: '#10B98120', color: '#10B981', border: '1px solid #10B98150' }
+                  : tipo === 'despesa'
+                    ? { backgroundColor: '#EF444420', color: '#EF4444', border: '1px solid #EF444450' }
+                    : { backgroundColor: 'var(--bg-secondary)', color: 'var(--text-primary)', border: '1px solid var(--border)' }
+                : { backgroundColor: 'var(--bg-secondary)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}
             >
               {tipo === 'todos' ? 'Todos' : tipo === 'receita' ? 'Receitas' : 'Despesas'}
             </button>
@@ -47,17 +50,18 @@ export default function Lancamentos() {
       </div>
 
       {filtrados.length === 0 ? (
-        <div className="bg-gray-900 border border-gray-700 rounded-2xl p-10 flex flex-col items-center gap-3">
-          <p className="text-white font-semibold">Nenhum lançamento encontrado</p>
-          <p className="text-gray-500 text-sm text-center">
-            {busca || filtroTipo !== 'todos' ? 'Tente ajustar os filtros' : 'Clique em "Novo lançamento" para começar'}
+        <div className="card flex flex-col items-center gap-2 py-10">
+          <p className="text-primary font-semibold text-sm">Nenhum lançamento encontrado</p>
+          <p className="text-muted text-xs text-center">
+            {busca || filtroTipo !== 'todos'
+              ? 'Tente ajustar os filtros'
+              : 'Clique em "Novo lançamento" para começar'}
           </p>
         </div>
       ) : (
         <div className="flex flex-col gap-2">
-          <p className="text-gray-500 text-xs">
+          <p className="text-muted text-xs">
             {filtrados.length} registro{filtrados.length !== 1 ? 's' : ''}
-            {busca || filtroTipo !== 'todos' ? ' encontrado' + (filtrados.length !== 1 ? 's' : '') : ''}
           </p>
           {filtrados.map(l => (
             <LancamentoItem key={l.id} lancamento={l} />
