@@ -8,7 +8,7 @@ import ObrigacoesMEI from './ObrigacoesMEI'
 import LinksMEI from './LinksMEI'
 import LancamentoItem from './LancamentoItem'
 
-export default function VisaoGeral({ onNovoLancamento }: { onNovoLancamento: () => void }) {
+export default function VisaoGeral() {
   const { perfil, totalReceitas, totalDespesas, lancamentos } = useLancamentos()
   const hora = new Date().getHours()
   const saudacao = hora < 12 ? 'Bom dia' : hora < 18 ? 'Boa tarde' : 'Boa noite'

@@ -7,7 +7,7 @@ import { exportarRelatorioPDF } from '../utils/exportarPDF'
 type Periodo = 'mes' | 'trimestre' | 'ano'
 
 export default function Relatorios() {
-  const { lancamentos, perfil, totalReceitas, totalDespesas, totalISS, lucroLiquido, getDadosPorMes } = useLancamentos()
+ const { lancamentos, perfil, getDadosPorMes } = useLancamentos()
   const [periodo, setPeriodo] = useState<Periodo>('mes')
 
   const hoje = new Date()

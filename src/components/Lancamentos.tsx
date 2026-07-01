@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Search, Filter } from 'lucide-react'
+import { Search} from 'lucide-react'
 import { useLancamentos } from '../context/LancamentosContext'
 import LancamentoItem from './LancamentoItem'
 import type { TipoLancamento } from '../types'
 
-export default function Lancamentos({ onNovo }: { onNovo: () => void }) {
+export default function Lancamentos() {
   const { lancamentos } = useLancamentos()
   const [busca, setBusca] = useState('')
   const [filtroTipo, setFiltroTipo] = useState<TipoLancamento | 'todos'>('todos')
