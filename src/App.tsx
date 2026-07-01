@@ -14,12 +14,12 @@ function Dashboard() {
   const [modalAberto, setModalAberto] = useState(false)
 
   function renderAba() {
-    switch (abaAtiva) {
-      case 'visao-geral': return <VisaoGeral onNovoLancamento={() => setModalAberto(true)} />
-      case 'lancamentos': return <Lancamentos onNovo={() => setModalAberto(true)} />
-      case 'relatorios': return <Relatorios />
-    }
+  switch (abaAtiva) {
+    case 'visao-geral': return <VisaoGeral />
+    case 'lancamentos': return <Lancamentos />
+    case 'relatorios': return <Relatorios />
   }
+}
 
   return (
     <div className="min-h-screen bg-primary">
